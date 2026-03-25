@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Pytest (może pojawić się w każdym folderze jeśli pytest odpalisz z złego miejsca)
+.pytest_cache/
+**/.pytest_cache/
+**/__pycache__/
+
+# Raporty HTML
+opera_gx_tests/reports/
+
+# Wirtualne środowisko
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# System Windows
+Thumbs.db
+desktop.ini
