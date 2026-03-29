@@ -19,7 +19,7 @@ def browser_type_launch_args(browser_type_launch_args):
     }
 
 @pytest.fixture(autouse=True)
-def pauza_po_tescie():
+def pause_after_tests():
     yield
     time.sleep(3)
 
