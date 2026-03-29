@@ -60,6 +60,22 @@ opera_gx_tests/
 | test_gx_control.py | `TestGXControlPersistence` | `test_ram_limit_persists_after_browser_restart` | RAM Limiter zapamiętuje wartość po restarcie |
 | test_gx_control.py | `TestGXControlPersistence` | `test_hard_limit_persists_after_browser_restart` | Hard Limit zachowuje stan po restarcie |
 
+## Struktura klas testowych
+
+Testy są pogrupowane w klasy według poziomu testowania. Klasy nie są technicznie wymagane przez pytest – testy działałyby identycznie jako zwykłe funkcje. Są tu świadomą decyzją architektoniczną:
+
+| Klasa | Poziom | Co weryfikuje |
+|-------|--------|---------------|
+| `TestGXCornerSmoke` | Smoke | Czy aplikacja w ogóle odpowiada (status 200) |
+| `TestGXCornerAPIValidation` | API | Czy dane zwracane przez API są kompletne i poprawne |
+| `TestGXCornerElementVisibility` | UI | Czy elementy widoczne dla użytkownika mają wymagane dane |
+| `TestGXControlPersistence` | Persistence | Czy ustawienia przeżywają restart przeglądarki |
+
+Taki podział pozwala uruchamiać selektywnie tylko wybrany poziom testów, np.:
+```
+python -m pytest tests/test_gx_corner.py::TestGXCornerSmoke
+```
+
 ## Technologie
 
 - [Python](https://python.org) 3.10+
