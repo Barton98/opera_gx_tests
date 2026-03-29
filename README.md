@@ -1,7 +1,7 @@
 # Opera GX – Automated Tests
 
 Projekt testów automatycznych dla przeglądarki Opera GX.
-Testuje GX Corner (API gier i deali) oraz GX Control (persystencja ustawień RAM i Hard Limit).
+Testuję GX Corner (API gier i deali) oraz GX Control (persystencja ustawień RAM i Hard Limit).
 
 ## Wymagania
 
@@ -62,7 +62,7 @@ opera_gx_tests/
 
 ## Struktura klas testowych
 
-Testy są pogrupowane w klasy według poziomu testowania. Klasy nie są technicznie wymagane przez pytest – testy działałyby identycznie jako zwykłe funkcje. Są tu świadomą decyzją architektoniczną:
+Testy są pogrupowane w klasy według poziomu testowania. Klasy nie są technicznie wymagane przez pytest – testy działałyby identycznie jak zwykłe funkcje. Są tu świadomą decyzją architektoniczną:
 
 | Klasa | Poziom | Co weryfikuje |
 |-------|--------|---------------|
@@ -75,6 +75,8 @@ Taki podział pozwala uruchamiać selektywnie tylko wybrany poziom testów, np.:
 ```
 python -m pytest tests/test_gx_corner.py::TestGXCornerSmoke
 ```
+
+Klasy są też widoczne w raporcie HTML (`reports/report.html`) – testy są tam pogrupowane pod nazwą klasy, co ułatwia szybką identyfikację, która warstwa testów oblewa.
 
 ## Technologie
 
