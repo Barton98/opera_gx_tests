@@ -8,6 +8,8 @@ OPERA_GX_PATH = os.path.join(
     "AppData", "Local", "Programs", "Opera GX", "opera.exe"
 )
 
+os.makedirs("reports", exist_ok = True)
+
 @pytest.fixture(scope="session")
 def browser_type_launch_args(browser_type_launch_args):
     return {
